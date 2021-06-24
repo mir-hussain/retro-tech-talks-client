@@ -1,0 +1,45 @@
+.topics {
+  margin-bottom: 2em;
+  &__header {
+    h1 {
+      text-align: center;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      background-color: $cream;
+      display: flex;
+      align-items: center;
+      margin: 20px 20px 0 0;
+      padding: 0.5em;
+      -webkit-border-radius: 50px;
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-bottom-right-radius: 5px;
+      -moz-border-radius: 50px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-bottomright: 5px;
+      border-radius: 50px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      // -webkit-box-shadow: 3px 3px 5px 0px
+      //   rgba(0, 0, 0, 0.75);
+      // -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+      // box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+
+      &:hover {
+        cursor: pointer;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-left: 0.2em;
+        color: $dark-gray;
+        font-weight: 700;
+      }
+      .topics__icon {
+        color: $orange;
+      }
+    }
+  }
+}

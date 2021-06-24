@@ -1,0 +1,80 @@
+.follow {
+  margin-top: 1em;
+  &__header {
+    text-align: center;
+  }
+  &__people {
+    height: 100%;
+  }
+}
+
+.people {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1em;
+  &__image {
+    background-color: #fff;
+    height: 80px;
+    width: 80px;
+    padding: 5px;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    div {
+      height: 55px;
+      width: 100%;
+      border-radius: 5px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &__info {
+    width: 250px;
+    margin-left: 20px;
+    color: $cream;
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.button-p {
+  outline: 0;
+  font-size: 1em;
+  font-weight: 600;
+  background: $cream;
+  color: $dark-gray;
+  border: none;
+  padding: 0.5em 1em;
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 -8px 0 0 $cream,
+    1px 1px 0 0 darken($cream, 20%),
+    2px 2px 0 0 darken($cream, 20%),
+    3px 3px 0 0 darken($cream, 20%),
+    4px 4px 0 0 darken($cream, 20%),
+    5px 5px 0 0 darken($cream, 20%),
+    6px 6px 0 0 darken($cream, 20%),
+    7px 7px 0 0 darken($cream, 20%);
+
+  &:hover {
+    color: #444;
+  }
+  &:active {
+    color: #222;
+    box-shadow: inset 0 -4px 0 0 $cream,
+      1px 1px 0 0 darken($cream, 30%),
+      2px 2px 0 0 darken($cream, 30%),
+      3px 3px 0 0 darken($cream, 30%),
+      4px 4px 0 0 darken($cream, 30%),
+      5px 5px 0 0 darken($cream, 30%);
+  }
+}

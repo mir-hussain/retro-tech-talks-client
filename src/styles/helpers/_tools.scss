@@ -1,0 +1,12 @@
+@import "./colors";
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin background($color) {
+  background-image: url(../../images/grain.png);
+  background-color: $color;
+}

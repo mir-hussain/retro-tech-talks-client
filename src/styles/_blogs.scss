@@ -1,0 +1,6 @@
+.blogs {
+  @include background($cream);
+  height: 200vh;
+  width: 65%;
+  padding-top: 90px;
+}

@@ -1,0 +1,68 @@
+@import "./helpers/colors";
+@import "./helpers/tools";
+@import "./helpers/fonts";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $p-ff;
+}
+
+.bottom-dashed {
+  margin: 0;
+  border-top: 1px dashed rgba(0, 0, 0, 0.25);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+  position: absolute;
+  bottom: 10px;
+  background-color: transparent;
+  z-index: 1000;
+  width: 100%;
+  height: 0;
+}
+
+.divider {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.2rem;
+  color: $dark-gray;
+  span {
+    position: relative;
+    display: inline-block;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 6px;
+      border-bottom: 2px solid $dark-gray;
+      top: 5px;
+      width: 150px;
+    }
+    &::before {
+      right: 100%;
+      margin-right: 8px;
+    }
+
+    &::after {
+      left: 100%;
+      margin-left: 8px;
+    }
+  }
+}
+
+@import "./navbar";
+
+@import "./home";
+@import "./homeSidebar";
+@import "./blogs";
+
+@import "./login";
+
+@media screen and (max-width: 960px) {
+  .bottom-dashed {
+    display: none;
+  }
+}
