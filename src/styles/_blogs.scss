@@ -4,3 +4,10 @@
   width: 65%;
   padding-top: 90px;
 }
+
+@media screen and (max-width: 960px) {
+  .blogs {
+    width: 100%;
+    padding-top: 0;
+  }
+}

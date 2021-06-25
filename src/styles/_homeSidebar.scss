@@ -21,3 +21,9 @@
   padding: 1.5em;
   color: $dark-gray;
 }
+
+@media screen and (max-width: 960px) {
+  .sidebar-section {
+    display: none;
+  }
+}

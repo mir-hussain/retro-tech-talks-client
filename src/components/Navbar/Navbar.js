@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   faBars,
   faTimes,
@@ -14,8 +14,19 @@ const Navbar = () => {
 
   const { currentUser, signOut } = useAuth();
 
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
+
+  const query = useQuery();
+  const queryName = query.get("name");
+  let hide = { display: "block" };
+  if (queryName === "admin") {
+    hide = { display: "none" };
+  }
+
   return (
-    <nav>
+    <nav style={hide}>
       <div className='nav-container'>
         <NavLink exact to='/' className='nav-logo'>
           Retro Tech Talks
@@ -38,7 +49,7 @@ const Navbar = () => {
           <li className='nav-item'>
             <NavLink
               exact
-              to='/admin'
+              to='/admin/add-blog?name=admin'
               activeClassName='active'
               className='nav-links'
               onClick={handleClick}
