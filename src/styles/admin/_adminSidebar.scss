@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Bazar Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bazar Medium"),
+    url("../../fonts/Bazar.woff") format("woff");
+}
+
 .admin-sidebar {
   height: 100vh;
   width: 20%;
@@ -12,9 +20,35 @@
       margin: 1em;
       a {
         color: $light-gray;
+        font-family: "Bazar Medium";
+        text-transform: uppercase;
         text-decoration: none;
         font-weight: bold;
         font-size: 2rem;
+      }
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
+
+.admin-nav-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .admin-sidebar {
+    height: 100%;
+    width: 100%;
+    ul {
+      li {
+        a {
+          font-size: 1.5rem;
+        }
+        img {
+          width: 30%;
+        }
       }
     }
   }

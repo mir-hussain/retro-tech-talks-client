@@ -78,3 +78,19 @@
   top: 0;
   @include background($orange);
 }
+
+@media screen and (max-width: 825px) {
+  .blog {
+    padding: 5em 0;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .blog__image {
+    height: 300px;
+    width: 300px;
+    img {
+      height: 200px;
+    }
+  }
+}

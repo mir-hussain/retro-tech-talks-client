@@ -4,13 +4,15 @@ import { useParams, Link } from "react-router-dom";
 const Blog = () => {
   const { key } = useParams();
   const [blogPost, setBlogPost] = useState({});
-  console.log(blogPost);
   const { title, imageURL, blog, admin, imageName } =
     blogPost;
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/getBlog/" + key)
+      .get(
+        "https://retro-tech-talks.herokuapp.com/getBlog/" +
+          key
+      )
       .then((res) => setBlogPost(res.data));
   }, [key]);
 

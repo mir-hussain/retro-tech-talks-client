@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useHistory } from "react-router";
+import login from "../../images/login.png";
+import sign from "../../images/sing-up.png";
 
 const Login = () => {
   const [newUser, setNewUser] = useState(false);
@@ -102,13 +104,21 @@ const Login = () => {
               id='user'
             />
           </div>
-          {newUser ? (
-            <button disabled={loading} type='submit'>
-              Sign Up
-            </button>
-          ) : (
-            <button>Log In</button>
-          )}
+          <div className='image-button-container'>
+            {newUser ? (
+              <button
+                className='button-img'
+                disabled={loading}
+                type='submit'
+              >
+                <img src={sign} alt='' />
+              </button>
+            ) : (
+              <button className='button-img' type='submit'>
+                <img src={login} alt='' />
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </section>

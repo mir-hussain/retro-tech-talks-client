@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
+import Logo from "../../images/rtt-logo.png";
 
 const AdminSidebar = () => {
   let { url } = useRouteMatch();
@@ -7,24 +8,26 @@ const AdminSidebar = () => {
   return (
     <div className='admin-sidebar'>
       <ul>
-        <li id='logo'>Retro Tech Talks</li>
-        <li>
-          <Link to='/'>Home</Link>
+        <li id='logo'>
+          <img src={Logo} alt='' />
         </li>
         <li>
-          <Link to={`${url}/add-blog?name=admin`}>
+          <NavLink to='/'>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to={`${url}/add-blog?name=admin`}>
             Add Blog
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={`${url}/blog-list?name=admin`}>
+          <NavLink to={`${url}/blog-list?name=admin`}>
             Blog List
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={`${url}/add-admin?name=admin`}>
-            Make admin
-          </Link>
+          <NavLink to={`${url}/add-admin?name=admin`}>
+            Add admin
+          </NavLink>
         </li>
       </ul>
     </div>

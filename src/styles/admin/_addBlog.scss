@@ -16,38 +16,26 @@
 }
 
 .blog-form {
+  width: 500px;
   &__input {
-    display: flex;
-    align-items: center;
     margin-top: 2em;
-    label {
-      background-color: #fcfcf8;
-      width: 40%;
-      display: block;
-      font-size: 1.2rem;
-      color: $dark-gray;
-    }
-    input {
-      width: 60%;
-      outline: none;
-      border: none;
-      font-size: 1rem;
-      color: $dark-gray;
-      background-color: #fcfcf8;
-      border-bottom: 1px dashed darken($cream, 50%);
-      &:focus {
-        outline: hidden;
-        border: hidden;
-        border-bottom: 1px dashed darken($cream, 50%);
-      }
-    }
-    textarea {
-      @extend input;
-      resize: none;
-      border: 1px dashed darken($cream, 50%);
-      &:focus {
-        border: 1px dashed darken($cream, 50%);
-      }
-    }
+    @include input;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .add-blog-section {
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 2em;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .add-blog {
+    padding: 1em;
+  }
+  .blog-form {
+    width: 350px;
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import post from "../../images/post.png";
 
 const AddBlog = () => {
   const [imageURL, setImageURL] = useState(null);
@@ -20,10 +21,14 @@ const AddBlog = () => {
       imageURL: imageURL,
     };
     axios
-      .post("http://localhost:5000/addBlog", blogData)
+      .post(
+        "https://retro-tech-talks.herokuapp.com/addBlog",
+        blogData
+      )
       .then((res) => {
         console.log(res);
         alert("Blog post Added");
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };
@@ -97,20 +102,21 @@ const AddBlog = () => {
               required
             />
           </div>
-          {imageURL === null ? (
-            <input
-              className='primary-btn'
-              type='submit'
-              value='Post'
-              disabled
-            />
-          ) : (
-            <input
-              className='primary-btn'
-              type='submit'
-              value='Post'
-            />
-          )}
+          <div className='image-button-container'>
+            {imageURL === null ? (
+              <button
+                className='button-img-disabled'
+                type='submit'
+                disabled
+              >
+                <img src={post} alt='' />
+              </button>
+            ) : (
+              <button className='button-img' type='submit'>
+                <img src={post} alt='' />
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </section>

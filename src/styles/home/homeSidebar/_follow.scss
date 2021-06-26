@@ -46,3 +46,25 @@
     }
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .people {
+    display: flex;
+    justify-content: space-evenly;
+    &__image {
+      height: 100px;
+      width: 100px;
+      div {
+        height: 75px;
+      }
+    }
+    &__info {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

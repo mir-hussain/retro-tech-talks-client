@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Bazar Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bazar Medium"),
+    url("../fonts/Bazar.woff") format("woff");
+}
+
 nav {
   @include background($blue);
   width: 100%;
@@ -16,7 +24,6 @@ nav {
   @include center();
   width: 100%;
   height: 90px;
-  max-width: 1500px;
   display: flex;
   justify-content: space-between;
   .nav-logo {
@@ -45,9 +52,10 @@ nav {
     font-weight: 600;
     cursor: pointer;
     .nav-links {
-      font-family: $p-ff;
+      font-family: "Bazar Medium";
+      text-transform: uppercase;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       text-decoration: none;
       padding: 0.5rem 1rem;
       height: 100%;
@@ -116,5 +124,20 @@ nav {
     font-size: 1.8rem;
     cursor: pointer;
     color: $cream;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav-icon {
+    transform: translate(-100%, 7px);
+  }
+  .nav-logo {
+    transform: translateX(40px);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .nav-container {
+    width: 100%;
   }
 }

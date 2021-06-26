@@ -15,7 +15,7 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admins")
+      .get("https://retro-tech-talks.herokuapp.com/admins")
       .then((res) => setAdmins(res.data));
   }, []);
 

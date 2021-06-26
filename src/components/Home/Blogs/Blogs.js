@@ -7,7 +7,7 @@ const Blogs = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/blogs")
+      .get("https://retro-tech-talks.herokuapp.com/blogs")
       .then((res) => setBlogs(res.data));
   }, []);
 
@@ -24,7 +24,6 @@ const Card = ({ blogBody }) => {
   const { _id, title, blog, admin, imageURL } = blogBody;
 
   const intro = blog.split(" ").slice(0, 50).join(" ");
-  console.log(intro);
 
   return (
     <div className='card'>

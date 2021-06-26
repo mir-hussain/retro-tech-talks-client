@@ -12,13 +12,16 @@ const BlogsList = () => {
 
   const deleteBlog = (id) => {
     axios
-      .delete("http://localhost:5000/deleteBlog/" + id)
+      .delete(
+        "https://retro-tech-talks.herokuapp.com/deleteBlog/" +
+          id
+      )
       .then((res) => setDeleted(res.data));
   };
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/blogs")
+      .get("https://retro-tech-talks.herokuapp.com/blogs")
       .then((res) => setBlogs(res.data));
   }, []);
 

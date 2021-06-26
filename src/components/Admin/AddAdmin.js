@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useImperativeHandle, useRef } from "react";
+import React, { useRef } from "react";
+import add from "../../images/add.png";
 
 const AddAdmin = () => {
   const adminRef = useRef();
@@ -12,7 +13,10 @@ const AddAdmin = () => {
     };
 
     axios
-      .post("http://localhost:5000/addAdmin", adminEmail)
+      .post(
+        "https://retro-tech-talks.herokuapp.com/addAdmin",
+        adminEmail
+      )
       .then((res) => {
         console.log(res);
         alert("E-mail Added");
@@ -28,14 +32,21 @@ const AddAdmin = () => {
           className='admin__form'
           onSubmit={handleSubmit}
         >
-          <label htmlFor='admin'>Email</label>
-          <input
-            type='text'
-            name='admin'
-            id='admin'
-            ref={adminRef}
-          />
-          <button type='submit'> Add </button>
+          <div className='admin__input'>
+            <label htmlFor='admin'>Email</label>
+
+            <input
+              type='text'
+              name='admin'
+              id='admin'
+              ref={adminRef}
+            />
+          </div>
+          <div className='image-button-container'>
+            <button type='submit' className='button-img'>
+              <img src={add} alt='' />
+            </button>
+          </div>
         </form>
       </div>
     </section>

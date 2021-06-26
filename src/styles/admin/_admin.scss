@@ -8,3 +8,9 @@
   justify-content: space-between;
   @include background($light-gray);
 }
+
+@media screen and (max-width: 960px) {
+  .admin-section {
+    flex-direction: column;
+  }
+}
