@@ -14,7 +14,7 @@ const Admin = () => {
   let { path } = useRouteMatch();
 
   return (
-    <div>
+    <section className='admin-section'>
       <AdminSidebar />
       <Switch>
         <Route exact path='/'>
@@ -30,7 +30,7 @@ const Admin = () => {
           <AddAdmin />
         </Route>
       </Switch>
-    </div>
+    </section>
   );
 };
 

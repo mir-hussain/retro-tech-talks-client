@@ -1,0 +1,10 @@
+@import "./addAdmin";
+@import "./addBlog";
+@import "./adminSidebar";
+@import "./blogList";
+
+.admin-section {
+  display: flex;
+  justify-content: space-between;
+  @include background($light-gray);
+}

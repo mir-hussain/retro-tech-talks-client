@@ -5,7 +5,7 @@ const AdminSidebar = () => {
   let { url } = useRouteMatch();
 
   return (
-    <div>
+    <div className='admin-sidebar'>
       <ul>
         <li id='logo'>Retro Tech Talks</li>
         <li>

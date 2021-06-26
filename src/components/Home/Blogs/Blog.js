@@ -8,7 +8,7 @@ const Blog = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/getBlog/` + key)
+      .get("http://localhost:5000/getBlog/" + key)
       .then((res) => setBlog(res.data));
   }, [key]);
 

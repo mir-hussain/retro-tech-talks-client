@@ -55,11 +55,11 @@ body {
 
 @import "./navbar";
 
-@import "./home";
-@import "./homeSidebar";
-@import "./blogs";
+@import "./home/home";
 
 @import "./login";
+
+@import "./admin/admin";
 
 @media screen and (max-width: 960px) {
   .bottom-dashed {

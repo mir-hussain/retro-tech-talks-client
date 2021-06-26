@@ -1,0 +1,53 @@
+@import "../login";
+
+.add-blog-section {
+  width: 80%;
+  height: 100vh;
+  @include center;
+}
+
+.add-blog {
+  @include paperColor;
+  color: $dark-gray;
+  padding: 2em;
+  &__header {
+    text-align: center;
+  }
+}
+
+.blog-form {
+  &__input {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    label {
+      background-color: #fcfcf8;
+      width: 40%;
+      display: block;
+      font-size: 1.2rem;
+      color: $dark-gray;
+    }
+    input {
+      width: 60%;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      color: $dark-gray;
+      background-color: #fcfcf8;
+      border-bottom: 1px dashed darken($cream, 50%);
+      &:focus {
+        outline: hidden;
+        border: hidden;
+        border-bottom: 1px dashed darken($cream, 50%);
+      }
+    }
+    textarea {
+      @extend input;
+      resize: none;
+      border: 1px dashed darken($cream, 50%);
+      &:focus {
+        border: 1px dashed darken($cream, 50%);
+      }
+    }
+  }
+}

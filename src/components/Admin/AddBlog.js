@@ -52,54 +52,53 @@ const AddBlog = () => {
       });
   };
   return (
-    <div className='add-service-section'>
-      <form
-        className='add-service-form'
-        onSubmit={handleSubmit}
-      >
-        <h1 className='form-header'>Add service here </h1>
-        <div className='input-field'>
-          <label htmlFor='name'>Blog Title</label>
-          <input id='title' name='title' ref={titleRef} />
-        </div>
-        <div className='input-field'>
-          <label htmlFor='description'>Blog Body</label>
-          <textarea name='blog' id='blog' ref={blogRef} />
-        </div>
-        <div className='input-field'>
-          <label htmlFor='key'>Blog Key</label>
-          <input id='key' name='key' ref={keyRef} />
-        </div>
-        <div className='input-field'>
-          <label htmlFor='price'>Admin name</label>
-          <input id='admin' name='admin' ref={adminRef} />
-        </div>
-        <div className='input-field add-image'>
-          <label htmlFor='image'>Add image</label>
-          <input
-            id='image'
-            name='image'
-            type='file'
-            onChange={handleImageUpload}
-            ref={imageRef}
-          />
-        </div>
-        {imageURL === null ? (
-          <input
-            className='primary-btn'
-            type='submit'
-            value='Save'
-            disabled
-          />
-        ) : (
-          <input
-            className='primary-btn'
-            type='submit'
-            value='Save'
-          />
-        )}
-      </form>
-    </div>
+    <section className='add-blog-section'>
+      <div className='add-blog'>
+        <h1 className='add-blog__header'>Add Blog</h1>
+        <form className='blog-form' onSubmit={handleSubmit}>
+          <div className='blog-form__input'>
+            <label htmlFor='name'>Blog Title</label>
+            <input id='title' name='title' ref={titleRef} />
+          </div>
+          <div className='blog-form__input'>
+            <label htmlFor='description'>Blog Body</label>
+            <textarea name='blog' id='blog' ref={blogRef} />
+          </div>
+          <div className='blog-form__input'>
+            <label htmlFor='key'>Blog Key</label>
+            <input id='key' name='key' ref={keyRef} />
+          </div>
+          <div className='blog-form__input'>
+            <label htmlFor='price'>Admin name</label>
+            <input id='admin' name='admin' ref={adminRef} />
+          </div>
+          <div className='blog-form__input add-image'>
+            <label htmlFor='image'>Add image</label>
+            <input
+              id='image'
+              name='image'
+              type='file'
+              onChange={handleImageUpload}
+              ref={imageRef}
+            />
+          </div>
+          {imageURL === null ? (
+            <input
+              className='primary-btn'
+              type='submit'
+              value='Post'
+              disabled
+            />
+          ) : (
+            <input
+              className='primary-btn'
+              type='submit'
+              value='Post'
+            />
+          )}
+        </form>
+      </div>
+    </section>
   );
 };
 
