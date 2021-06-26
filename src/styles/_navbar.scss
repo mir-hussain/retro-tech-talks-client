@@ -29,6 +29,9 @@ nav {
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
+    img {
+      height: 60%;
+    }
   }
   .nav-menu {
     display: flex;
@@ -85,7 +88,9 @@ nav {
     opacity: 1;
     transition: all 0.5s ease;
   }
-
+  .nav-logo {
+    transform: translateX(20px);
+  }
   .nav-menu.active {
     @include background($blue);
     width: 100%;
@@ -107,7 +112,7 @@ nav {
 
   .nav-icon {
     display: block;
-    transform: translate(-200%);
+    transform: translate(-200%, 7px);
     font-size: 1.8rem;
     cursor: pointer;
     color: $cream;

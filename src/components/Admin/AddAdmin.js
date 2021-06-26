@@ -21,18 +21,24 @@ const AddAdmin = () => {
   };
 
   return (
-    <div>
-      <h1>This is admin</h1>
-      <form className='admin' onSubmit={handleSubmit}>
-        <input
-          type='text'
-          name='admin'
-          id='admin'
-          ref={adminRef}
-        />
-        <input type='submit' value='Add' />
-      </form>
-    </div>
+    <section className='add-admin-section'>
+      <div className='admin'>
+        <h1 className='admin__header'>Add admin</h1>
+        <form
+          className='admin__form'
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor='admin'>Email</label>
+          <input
+            type='text'
+            name='admin'
+            id='admin'
+            ref={adminRef}
+          />
+          <button type='submit'> Add </button>
+        </form>
+      </div>
+    </section>
   );
 };
 

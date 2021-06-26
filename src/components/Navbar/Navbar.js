@@ -7,6 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useAuth } from "../../context/AuthContext";
 import axios from "axios";
+import Logo from "../../images/rtt-logo.png";
 const Navbar = () => {
   const { currentUser, signOut } = useAuth();
   const [click, setClick] = useState(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
   const query = useQuery();
   const queryName = query.get("name");
   let hide = { display: "block" };
-  if (queryName === "admin") {
+  if (queryName === "admin" || queryName === "blog") {
     hide = { display: "none" };
   }
 
@@ -39,7 +40,7 @@ const Navbar = () => {
     <nav style={hide}>
       <div className='nav-container'>
         <NavLink exact to='/' className='nav-logo'>
-          Retro Tech Talks
+          <img className='logo' src={Logo} alt='' />
         </NavLink>
 
         <ul

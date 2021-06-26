@@ -29,7 +29,7 @@ const Card = ({ blogBody }) => {
   return (
     <div className='card'>
       <div className='card__image'>
-        <Link to={`/blog/${_id}`}>
+        <Link to={`/blog/${_id}?name=admin`}>
           <img src={imageURL} alt='' />
         </Link>
       </div>
@@ -41,7 +41,9 @@ const Card = ({ blogBody }) => {
         <div className='card__divider'></div>
         <p className='card__content'>
           {intro} .....{" "}
-          <Link to={`/blog/${_id}`}>(Read More)</Link>
+          <Link to={`/blog/${_id}?name=admin`}>
+            (Read More)
+          </Link>
         </p>
       </div>
     </div>

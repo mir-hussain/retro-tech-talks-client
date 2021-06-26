@@ -9,10 +9,7 @@ import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Admin from "../Admin/Admin";
 import Blog from "../Home/Blogs/Blog";
-import { createContext, useState } from "react";
 import { AuthProvider } from "../../context/AuthContext";
-
-export const UserContext = createContext();
 
 function App() {
   return (

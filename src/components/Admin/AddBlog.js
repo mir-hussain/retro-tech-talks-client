@@ -3,22 +3,20 @@ import axios from "axios";
 
 const AddBlog = () => {
   const [imageURL, setImageURL] = useState(null);
-  console.log(imageURL);
 
   const titleRef = useRef();
   const blogRef = useRef();
   const adminRef = useRef();
   const imageRef = useRef();
-  const keyRef = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const blogData = {
-      key: keyRef.current.value,
       title: titleRef.current.value,
       blog: blogRef.current.value,
       admin: adminRef.current.value,
+      imageName: imageRef.current.value,
       imageURL: imageURL,
     };
     axios
@@ -32,20 +30,17 @@ const AddBlog = () => {
 
   const handleImageUpload = (event) => {
     const image = event.target.files[0];
-    console.log(image);
     const imageData = new FormData();
     imageData.set(
       "key",
       "a7974116ef15487481060769cb1123e6"
     );
     imageData.append("image", image);
-    console.log(imageData);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
         const imageLink = response.data.data.display_url;
         setImageURL(imageLink);
-        console.log(response);
       })
       .catch(function (error) {
         console.log(error);
@@ -58,19 +53,39 @@ const AddBlog = () => {
         <form className='blog-form' onSubmit={handleSubmit}>
           <div className='blog-form__input'>
             <label htmlFor='name'>Blog Title</label>
-            <input id='title' name='title' ref={titleRef} />
+            <input
+              id='title'
+              name='title'
+              ref={titleRef}
+              required
+            />
           </div>
           <div className='blog-form__input'>
             <label htmlFor='description'>Blog Body</label>
-            <textarea name='blog' id='blog' ref={blogRef} />
+            <textarea
+              name='blog'
+              id='blog'
+              ref={blogRef}
+              required
+            />
           </div>
           <div className='blog-form__input'>
-            <label htmlFor='key'>Blog Key</label>
-            <input id='key' name='key' ref={keyRef} />
+            <label htmlFor='admin'>Admin name</label>
+            <input
+              id='admin'
+              name='admin'
+              ref={adminRef}
+              required
+            />
           </div>
           <div className='blog-form__input'>
-            <label htmlFor='price'>Admin name</label>
-            <input id='admin' name='admin' ref={adminRef} />
+            <label htmlFor='image-name'>Image Title</label>
+            <input
+              id='image-name'
+              name='image-name'
+              ref={imageRef}
+              required
+            />
           </div>
           <div className='blog-form__input add-image'>
             <label htmlFor='image'>Add image</label>
@@ -79,7 +94,7 @@ const AddBlog = () => {
               name='image'
               type='file'
               onChange={handleImageUpload}
-              ref={imageRef}
+              required
             />
           </div>
           {imageURL === null ? (
