@@ -1,14 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Spinner from "../../Spinner/Spinner";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("https://retro-tech-talks.herokuapp.com/blogs")
       .then((res) => setBlogs(res.data));
+    setLoading(false);
   }, []);
 
   return (
