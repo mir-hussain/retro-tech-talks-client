@@ -1,0 +1,19 @@
+.blog-list-section {
+  height: 100vh;
+  width: 80%;
+  padding: 1em 3em;
+  @include background($cream);
+}
+
+.row {
+  height: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed darken($cream, 50%);
+  h1 {
+    color: $dark-gray;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+}

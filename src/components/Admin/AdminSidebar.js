@@ -22,7 +22,7 @@ const AdminSidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to={`${url}/make-admin?name=admin`}>
+          <Link to={`${url}/add-admin?name=admin`}>
             Make admin
           </Link>
         </li>
